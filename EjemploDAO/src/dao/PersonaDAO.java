@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uv.principios.dao;
-import uv.principios.utils.ConexionDB;
+package dao;
+
+import utils.ConexionDB;
+
 /**
  *
  * @author oswaldo
@@ -14,7 +16,7 @@ public class PersonaDAO implements IDAOGeneral<Persona> {
     @Override 
     public boolean guardar(Persona pojo){
         boolean res=false;
-        ConexionDB con=ConexionDB.getInstanse();
+        ConexionDB con=ConexionDB.getInstance();
         String sql="insert into persona(clave,nombre,direccion,telefono,departamento) values (" +
                pojo.getClave() + "," + pojo.getNombre() + ","+pojo.getDireccion()+","+
                 pojo.getTelefono()+","+")";

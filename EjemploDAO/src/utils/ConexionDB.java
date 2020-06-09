@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplodao;
+package utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -70,7 +70,6 @@ public class ConexionDB {
         Statement stm = null;
         ResultSet rs = null;
         try {
-            
             stm = ConexionDB.getInstance().con.createStatement();
             rs = stm.executeQuery(sql);
         } catch (SQLException e ) {
@@ -79,20 +78,17 @@ public class ConexionDB {
         finally{
             try {
                 stm.closeOnCompletion();
+                rs.close();
                 System.err.println("cerrado");
             } catch (SQLException ex) {
                 Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
         return rs;
     }
 
     public Connection getCon() {
         return con;
     }
-
-   
-    
 
 }

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uv.principios.dao;
-import uv.principios.utils.ConexionDB;
+package dao;
+
+import utils.ConexionDB;
 
 /**
  *
@@ -15,7 +16,7 @@ public class DepartamentoDAO implements IDAOGeneral<Departamento>{
     @Override
     public boolean guardar(Departamento pojo){
         boolean res=false;
-       ConexionDB con=ConexionDB.getInstanse();
+       ConexionDB con=ConexionDB.getInstance();
        String sql="insert into departamento(clave,nombre) values (" +
                pojo.getClave() + "," + pojo.getClave() + ")";
        res=con.execute(sql);

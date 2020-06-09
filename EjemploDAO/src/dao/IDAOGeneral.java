@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto1;
+package dao;
 
 /**
  *
  * @author oswaldo
  */
-public class Proyecto1 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+public interface IDAOGeneral<T> {
+    public boolean guardar(T pojo);
 }
