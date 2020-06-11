@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/EjemploDAO/EjemploDAO.iml" filepath="$PROJECT_DIR$/EjemploDAO/EjemploDAO.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjemploSingliton/EjemploSingliton.iml" filepath="$PROJECT_DIR$/EjemploSingliton/EjemploSingliton.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/PracticasFinales.iml" filepath="$PROJECT_DIR$/.idea/PracticasFinales.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proyecto-GUI/proyecto-GUI.iml" filepath="$PROJECT_DIR$/proyecto-GUI/proyecto-GUI.iml" />
     </modules>
   </component>
 </project>

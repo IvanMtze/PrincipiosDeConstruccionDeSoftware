@@ -15,3 +15,7 @@ T
 $EjemploDAO/src/utils/ConexionDB.java,4/c/4c57d3b350d331d330f10401df6d22dc61feea0b
 M
 EjemploDAO/src/test/main.java,9/f/9fed14c46726fc77925afdb27eeb33371c34ab92
+O
+proyecto-GUI/src/Principal.java,1/8/1862b4669ac1dad4ca640a4031d9f8db3a57284b
+O
+proyecto-GUI/src/Principal.form,5/d/5d11a83d47c77b17f40a42a3b4b81b6e6b94a18b
