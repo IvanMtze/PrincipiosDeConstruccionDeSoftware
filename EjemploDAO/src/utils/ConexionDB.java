@@ -25,9 +25,9 @@ public class ConexionDB {
     private ConexionDB() {
         try {
             // TODO code application logic here
-            String url = "jdbc:postgresql://localhost:5432/practica1";
+            String url = "jdbc:postgresql://localhost:5432/proyecto1";
             Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection(url, "postgres", "2408");
+            con = DriverManager.getConnection(url, "postgreSQL", "2107");
             Logger.getLogger(ConexionDB.class.getName()).log(Level.INFO, "Se conecto...");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
