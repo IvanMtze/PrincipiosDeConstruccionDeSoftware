@@ -5,8 +5,9 @@
  */
 package samplethread;
 
-import com.sun.istack.internal.logging.Logger;
+
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,7 +28,7 @@ public class Hilo1 extends Thread{
             try{
                sleep(timesleep); 
             } catch(InterruptedException ex){
-                Logger.getLogger(Hilo1.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(Hilo1.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

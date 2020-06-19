@@ -34,7 +34,7 @@ public class ContadorHilo extends Thread{
             long v= Long.parseLong(txtV.getText());
             v++;
             txtV.setText(String.valueOf(v));
-              Thread.sleep(1000);
+            Thread.sleep(1000);
           } catch (InterruptedException ex) {
               Logger.getLogger(ContadorHilo.class.getName()).log(Level.SEVERE, null, ex);
           }
