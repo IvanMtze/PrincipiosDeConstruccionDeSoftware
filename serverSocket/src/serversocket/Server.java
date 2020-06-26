@@ -25,7 +25,7 @@ public class Server extends Thread{
         this.idSessio = id;
     }
     
-    public void desconnectar() {
+    public synchronized void desconnectar() {
         try {
             socket.close();
         } catch (IOException ex) {
@@ -41,7 +41,7 @@ public class Server extends Thread{
             
             PrintWriter emisor = new PrintWriter(socket.getOutputStream());
             String msg = receptor.readLine();
-            System.out.println("El Cliente "+this.idSessio+" dice: " + msg);
+            System.out.println("Recibo de "+this.idSessio+" : " + msg);
             if (msg.equals("Hola")) {
                 emisor.println("Hola we\n Adios we");
                 emisor.flush();
