@@ -36,8 +36,8 @@ public class Server extends Thread{
     @Override
     public void run() {    
         try {
-            InputStreamReader isr = new InputStreamReader(socket.getInputStream());
-            BufferedReader receptor = new BufferedReader(isr);
+            InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
+            BufferedReader receptor = new BufferedReader(inputStreamReader);
             
             PrintWriter emisor = new PrintWriter(socket.getOutputStream());
             String msg = receptor.readLine();
@@ -46,7 +46,7 @@ public class Server extends Thread{
                 emisor.println("Hola we\n Adios we");
                 emisor.flush();
             }else{
-                emisor.println("No te entiendo");
+                emisor.println("No te entiendo, tas tonto\nAdios we");
             }
             
         } catch (IOException ex) {
