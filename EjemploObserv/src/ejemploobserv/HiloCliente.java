@@ -39,14 +39,18 @@ public class HiloCliente extends Observable implements Runnable{
     public synchronized void stoped(){
         isStoped=true;  
     }
+    
+    public void escribir(String msg){
+        emisor.write(msg);
+        emisor.write("\n");
+        emisor.flush();
+    }
+    
     @Override
     public void run(){
         while(!isStoped){
             try {
                 setChanged();
-                
-                emisor.write("Hola mundo \n");
-                emisor.flush();
                 notifyObservers("Valor");
                 Thread.sleep(2000);
             } catch (InterruptedException ex) {
