@@ -161,7 +161,6 @@ public class Departamentos extends javax.swing.JPanel {
     }//GEN-LAST:event_regresarActionPerformed
 
     private void guardarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDepartamentoActionPerformed
-        consolaDepartamento.setText("");
         formato();
         
         IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
@@ -191,6 +190,7 @@ public class Departamentos extends javax.swing.JPanel {
 
     private void formato() {
         consolaDepartamento.setText("");
+        
         claveDepartamento.setForeground(Color.DARK_GRAY);
         claveDepartamento.setText("Clave:");
  

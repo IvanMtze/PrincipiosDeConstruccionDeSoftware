@@ -44,7 +44,9 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GUI");
         setBackground(new java.awt.Color(255, 255, 255));
+        setFocusable(false);
         setIconImage(getIconImage());
+        setResizable(false);
 
         contenedor.setBackground(new java.awt.Color(56, 173, 198));
 
