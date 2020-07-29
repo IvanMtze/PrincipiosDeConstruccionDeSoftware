@@ -5,6 +5,8 @@
  */
 package DAO;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author oswaldo
@@ -12,7 +14,7 @@ package DAO;
 public interface IDAOGeneral<T> {
     public boolean guardar(T pojo);
     public boolean editar(T pojo);
-    public boolean buscar(T pojo);
+    public ResultSet buscar(T pojo);
     public boolean eliminar(T pojo);
     
 }

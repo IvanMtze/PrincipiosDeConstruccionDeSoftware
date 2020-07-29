@@ -22,7 +22,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         ConexionDB con=ConexionDB.getInstance();
         this.setLocationRelativeTo(null);
-        setIconImage(new ImageIcon(getClass().getResource("/images/IconoPrincipal.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("../images/IconoPrincipal.png")).getImage());
     }
 
     /**
