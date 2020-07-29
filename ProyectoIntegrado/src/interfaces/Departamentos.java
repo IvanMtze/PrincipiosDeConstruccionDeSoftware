@@ -21,7 +21,7 @@ public class Departamentos extends javax.swing.JPanel {
      */
     public Departamentos() {
         initComponents();
-        
+
     }
 
     /**
@@ -57,10 +57,25 @@ public class Departamentos extends javax.swing.JPanel {
         });
 
         buscarDepartamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Buscar.png"))); // NOI18N
+        buscarDepartamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarDepartamentoActionPerformed(evt);
+            }
+        });
 
         editarDepartamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Editar.png"))); // NOI18N
+        editarDepartamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarDepartamentoActionPerformed(evt);
+            }
+        });
 
         eliminarDepartamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eliminar.png"))); // NOI18N
+        eliminarDepartamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarDepartamentoActionPerformed(evt);
+            }
+        });
 
         regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Regresar.png"))); // NOI18N
         regresar.addActionListener(new java.awt.event.ActionListener() {
@@ -133,39 +148,55 @@ public class Departamentos extends javax.swing.JPanel {
 
     private void claveDepartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_claveDepartamentoMouseClicked
         claveDepartamento.setText("");
-        claveDepartamento.setBackground(Color.black);
+        claveDepartamento.setForeground(Color.black);
     }//GEN-LAST:event_claveDepartamentoMouseClicked
 
     private void nombreDepartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreDepartamentoMouseClicked
         nombreDepartamento.setText("");
-        nombreDepartamento.setBackground(Color.black);
+        nombreDepartamento.setForeground(Color.black);
     }//GEN-LAST:event_nombreDepartamentoMouseClicked
 
     private void regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarActionPerformed
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_regresarActionPerformed
 
     private void guardarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDepartamentoActionPerformed
         consolaDepartamento.setText("");
-        
-        claveDepartamento.setBackground(Color.DARK_GRAY);
-        claveDepartamento.setText("Clave:");
-        
-        nombreDepartamento.setBackground(Color.DARK_GRAY);
-        nombreDepartamento.setText("Nombre:");
+        formato();
         
         IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
-        Departamento d=new Departamento();
+        Departamento d = new Departamento();
 
         d.setClave(claveDepartamento.getText());
         d.setNombre(nombreDepartamento.getText());
-        
-        if(daop.guardar(d))
+
+        if (daop.guardar(d)) {
             consolaDepartamento.setText("Guardado");
-        else
+        } else {
             consolaDepartamento.setText("NO se pudo guardar");
+        }
     }//GEN-LAST:event_guardarDepartamentoActionPerformed
 
+    private void buscarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarDepartamentoActionPerformed
+        formato();
+    }//GEN-LAST:event_buscarDepartamentoActionPerformed
+
+    private void editarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarDepartamentoActionPerformed
+        formato();
+    }//GEN-LAST:event_editarDepartamentoActionPerformed
+
+    private void eliminarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarDepartamentoActionPerformed
+        formato();
+    }//GEN-LAST:event_eliminarDepartamentoActionPerformed
+
+    private void formato() {
+        consolaDepartamento.setText("");
+        claveDepartamento.setForeground(Color.DARK_GRAY);
+        claveDepartamento.setText("Clave:");
+ 
+        nombreDepartamento.setForeground(Color.DARK_GRAY);
+        nombreDepartamento.setText("Nombre:");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton buscarDepartamento;

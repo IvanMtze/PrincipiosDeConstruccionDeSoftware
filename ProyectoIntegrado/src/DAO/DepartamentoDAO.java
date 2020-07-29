@@ -15,7 +15,7 @@ public class DepartamentoDAO implements IDAOGeneral<Departamento>{
 
     @Override
     public boolean guardar(Departamento pojo) {
-        boolean res=false;
+        boolean res;
        ConexionDB con=ConexionDB.getInstance();
        String sql="insert into departamento(clave,nombre) values (" +
                pojo.getClave() + "," + pojo.getClave() + ")";
@@ -24,18 +24,31 @@ public class DepartamentoDAO implements IDAOGeneral<Departamento>{
     }
 
     @Override
-    public boolean editar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean editar(Departamento pojo) {
+        boolean res;
+        ConexionDB con=ConexionDB.getInstance();
+        String sql="update departamento set nombre='"+pojo.getNombre()+
+                "' where clave= '"+pojo.getClave()+"'";
+        res=con.execute(sql);
+        return res;
     }
 
     @Override
-    public boolean buscar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean buscar(Departamento pojo) {
+        boolean res;
+        ConexionDB con=ConexionDB.getInstance();
+        String sql="select * from departamento where clave = '"+pojo.getClave()+"'";
+        res=con.execute(sql);
+        return res;
     }
 
     @Override
-    public boolean eliminar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean eliminar(Departamento pojo) {
+        boolean res;
+        ConexionDB con=ConexionDB.getInstance();
+        String sql="delete from departamento where clave = '"+pojo.getClave()+"'";
+        res=con.execute(sql);
+        return res;
     }
     
 }

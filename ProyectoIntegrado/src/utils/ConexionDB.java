@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author pedro
+ * @author oswaldo
  */
 public class ConexionDB {
 
@@ -36,26 +36,26 @@ public class ConexionDB {
         }
 
     }
-    
-     public static ConexionDB getInstance() {
+
+    public static ConexionDB getInstance() {
         if (cx == null) {
             cx = new ConexionDB();
         }
         return cx;
     }
 
-    //implemtar funcionalidad de execute.
     public boolean execute(String sql) {
         boolean registrar = false;
         Statement stm = null;
-     
+
         try {
             stm = ConexionDB.getInstance().con.createStatement();
             stm.execute(sql);
             registrar = true;
+            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             try {
                 stm.close();
             } catch (SQLException ex) {
@@ -64,18 +64,18 @@ public class ConexionDB {
         }
         return registrar;
     }
+    
 
     public ResultSet select(String sql) {
-      
+
         Statement stm = null;
         ResultSet rs = null;
         try {
             stm = ConexionDB.getInstance().con.createStatement();
             rs = stm.executeQuery(sql);
-        } catch (SQLException e ) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally{
+        } finally {
             try {
                 stm.closeOnCompletion();
                 rs.close();

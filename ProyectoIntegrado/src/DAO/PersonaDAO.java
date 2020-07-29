@@ -15,7 +15,7 @@ public class PersonaDAO implements IDAOGeneral<Persona> {
 
     @Override
     public boolean guardar(Persona pojo) {
-        boolean res = false;
+        boolean res;
         ConexionDB con = ConexionDB.getInstance();
         String sql = "insert into persona(clave,nombre,direccion,telefono,departamento) values ("
                 + pojo.getClave() + "," + pojo.getNombre() + "," + pojo.getDireccion() + ","
@@ -25,17 +25,32 @@ public class PersonaDAO implements IDAOGeneral<Persona> {
     }
 
     @Override
-    public boolean editar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean editar(Persona pojo) {
+        boolean res;
+        ConexionDB con=ConexionDB.getInstance();
+        String sql="update persona set nombre= '"+pojo.getNombre()+
+                "',telefono= '"+pojo.getTelefono()+
+                "' ,direccion = ' "+pojo.getDireccion()+
+                "' ,departamento = '"+pojo.getDepartamento()+" ' ";
+        res=con.execute(sql);
+        return res;
     }
 
     @Override
-    public boolean buscar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean buscar(Persona pojo) {
+        boolean res;
+        ConexionDB con=ConexionDB.getInstance();
+        String sql="select * from persona where clave = '"+pojo.getClave()+"'";
+        res=con.execute(sql);
+        return res;
     }
 
     @Override
-    public boolean eliminar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean eliminar(Persona pojo) {
+        boolean res;
+        ConexionDB con= ConexionDB.getInstance();
+        String sql="delete from persona where clave = '"+pojo.getClave()+"'";
+        res=con.execute(sql);
+        return res;
     }
 }

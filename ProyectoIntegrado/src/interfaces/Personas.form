@@ -17,10 +17,11 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="regresar" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="borrarPersona" min="-2" pref="35" max="-2" attributes="0"/>
@@ -29,16 +30,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="buscarPersona" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="guardarPersona" pref="0" max="32767" attributes="0"/>
+                      <Component id="guardarPersona" pref="35" max="32767" attributes="0"/>
                   </Group>
                   <Component id="clavePersona" alignment="1" max="32767" attributes="0"/>
                   <Component id="nombrePersona" alignment="1" max="32767" attributes="0"/>
                   <Component id="telefonoPersona" alignment="1" max="32767" attributes="0"/>
-                  <Component id="direccionPersona" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="199" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="direccionPersona" alignment="0" max="32767" attributes="0"/>
                   <Component id="departamentoPersona" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -146,6 +143,9 @@
           <Image iconType="3" name="/images/Buscar.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarPersonaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="editarPersona">
       <Properties>
@@ -153,6 +153,9 @@
           <Image iconType="3" name="/images/Editar.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editarPersonaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="borrarPersona">
       <Properties>
@@ -160,6 +163,9 @@
           <Image iconType="3" name="/images/Eliminar.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="borrarPersonaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

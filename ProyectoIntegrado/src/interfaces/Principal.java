@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import java.awt.BorderLayout;
 import javax.swing.ImageIcon;
 import utils.ConexionDB;
 
@@ -33,7 +34,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        contenedor = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuPersonas = new javax.swing.JMenuItem();
@@ -45,17 +46,17 @@ public class Principal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setIconImage(getIconImage());
 
-        jPanel1.setBackground(new java.awt.Color(56, 173, 198));
+        contenedor.setBackground(new java.awt.Color(56, 173, 198));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 223, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 314, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Menu");
@@ -92,11 +93,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -104,13 +105,26 @@ public class Principal extends javax.swing.JFrame {
 
     private void menuDepartamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDepartamentosActionPerformed
         Departamentos dep=new Departamentos();
-        this.getContentPane().add(dep);
-        
+        this.setSize(218,292);
+        dep.setSize(218,243);
+        dep.setLocation(0,0);
+        contenedor.setSize(218, 292);
+        contenedor.removeAll();
+        contenedor.add(dep,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
     }//GEN-LAST:event_menuDepartamentosActionPerformed
 
     private void menuPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPersonasActionPerformed
         Personas per=new Personas();
-        this.getContentPane().add(per);
+        this.setSize(223,365);
+        per.setSize(223,314);
+        per.setLocation(0,0);
+        contenedor.setSize(223,365);
+        contenedor.removeAll();
+        contenedor.add(per,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
     }//GEN-LAST:event_menuPersonasActionPerformed
 
     private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
@@ -153,9 +167,9 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JPanel contenedor;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem menuDepartamentos;
     private javax.swing.JMenuItem menuPersonas;
     private javax.swing.JMenu salir;

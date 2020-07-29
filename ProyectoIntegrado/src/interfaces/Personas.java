@@ -85,10 +85,25 @@ public class Personas extends javax.swing.JPanel {
         });
 
         buscarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Buscar.png"))); // NOI18N
+        buscarPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarPersonaActionPerformed(evt);
+            }
+        });
 
         editarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Editar.png"))); // NOI18N
+        editarPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarPersonaActionPerformed(evt);
+            }
+        });
 
         borrarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eliminar.png"))); // NOI18N
+        borrarPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarPersonaActionPerformed(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("PERSONA");
@@ -113,10 +128,11 @@ public class Personas extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(borrarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,15 +141,12 @@ public class Personas extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buscarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(guardarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(clavePersona, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nombrePersona, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(telefonoPersona, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(direccionPersona)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(departamentoPersona))
+                        .addComponent(guardarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 35, Short.MAX_VALUE))
+                    .addComponent(clavePersona)
+                    .addComponent(nombrePersona)
+                    .addComponent(telefonoPersona)
+                    .addComponent(direccionPersona, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(departamentoPersona, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -165,51 +178,67 @@ public class Personas extends javax.swing.JPanel {
 
     private void nombrePersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombrePersonaMouseClicked
         nombrePersona.setText("");
-        nombrePersona.setBackground(Color.BLACK);
+        nombrePersona.setForeground(Color.BLACK);
     }//GEN-LAST:event_nombrePersonaMouseClicked
 
     private void clavePersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clavePersonaMouseClicked
         clavePersona.setText("");
-        clavePersona.setBackground(Color.BLACK);
+        clavePersona.setForeground(Color.BLACK);
     }//GEN-LAST:event_clavePersonaMouseClicked
 
     private void telefonoPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_telefonoPersonaMouseClicked
         telefonoPersona.setText("");
-        telefonoPersona.setBackground(Color.BLACK);
+        telefonoPersona.setForeground(Color.BLACK);
     }//GEN-LAST:event_telefonoPersonaMouseClicked
 
     private void direccionPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_direccionPersonaMouseClicked
         direccionPersona.setText("");
-        direccionPersona.setBackground(Color.BLACK);
+        direccionPersona.setForeground(Color.BLACK);
     }//GEN-LAST:event_direccionPersonaMouseClicked
 
     private void departamentoPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_departamentoPersonaMouseClicked
         departamentoPersona.setText("");
-        departamentoPersona.setBackground(Color.BLACK);
+        departamentoPersona.setForeground(Color.BLACK);
     }//GEN-LAST:event_departamentoPersonaMouseClicked
 
     private void regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarActionPerformed
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_regresarActionPerformed
 
     private void guardarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarPersonaActionPerformed
+        formato();
+    }//GEN-LAST:event_guardarPersonaActionPerformed
+
+    private void buscarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarPersonaActionPerformed
+        formato();
+    }//GEN-LAST:event_buscarPersonaActionPerformed
+
+    private void editarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPersonaActionPerformed
+        formato();
+    }//GEN-LAST:event_editarPersonaActionPerformed
+
+    private void borrarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarPersonaActionPerformed
+        formato();
+    }//GEN-LAST:event_borrarPersonaActionPerformed
+
+    private void formato() {
         consolaPersona.setText("");
-        
-        clavePersona.setBackground(Color.DARK_GRAY);
+
+        clavePersona.setForeground(Color.DARK_GRAY);
         clavePersona.setText("Clave:");
 
-        nombrePersona.setBackground(Color.DARK_GRAY);
+        nombrePersona.setForeground(Color.DARK_GRAY);
         nombrePersona.setText("Nombre:");
 
-        telefonoPersona.setBackground(Color.DARK_GRAY);
+        telefonoPersona.setForeground(Color.DARK_GRAY);
         telefonoPersona.setText("Telefono:");
 
-        direccionPersona.setBackground(Color.DARK_GRAY);
+        direccionPersona.setForeground(Color.DARK_GRAY);
         direccionPersona.setText("Direccion:");
 
-        departamentoPersona.setBackground(Color.DARK_GRAY);
+        departamentoPersona.setForeground(Color.DARK_GRAY);
         departamentoPersona.setText("Departamento: ");
-    }//GEN-LAST:event_guardarPersonaActionPerformed
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
