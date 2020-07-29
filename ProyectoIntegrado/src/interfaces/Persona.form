@@ -18,10 +18,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="guardarPersona1" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="regresar" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="borrarPersona" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -29,25 +29,18 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="buscarPersona" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="guardarPersona" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="guardarPersona" pref="0" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="clavePersona" alignment="1" max="32767" attributes="0"/>
+                  <Component id="nombrePersona" alignment="1" max="32767" attributes="0"/>
+                  <Component id="telefonoPersona" alignment="1" max="32767" attributes="0"/>
+                  <Component id="direccionPersona" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="clavePersona" alignment="1" max="32767" attributes="0"/>
-                          <Component id="nombrePersona" alignment="1" max="32767" attributes="0"/>
-                          <Component id="telefonoPersona" alignment="1" max="32767" attributes="0"/>
-                          <Component id="direccionPersona" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jScrollPane1" min="-2" pref="199" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="199" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,12 +49,12 @@
           <Group type="102" alignment="1" attributes="0">
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="16" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="guardarPersona" min="-2" max="-2" attributes="0"/>
-                  <Component id="buscarPersona" min="-2" max="-2" attributes="0"/>
-                  <Component id="editarPersona" min="-2" max="-2" attributes="0"/>
-                  <Component id="borrarPersona" min="-2" max="-2" attributes="0"/>
-                  <Component id="guardarPersona1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="buscarPersona" max="32767" attributes="0"/>
+                  <Component id="editarPersona" max="32767" attributes="0"/>
+                  <Component id="borrarPersona" max="32767" attributes="0"/>
+                  <Component id="regresar" max="32767" attributes="0"/>
+                  <Component id="guardarPersona" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="clavePersona" min="-2" max="-2" attributes="0"/>
@@ -171,12 +164,15 @@
         <Property name="text" type="java.lang.String" value="PERSONA"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="guardarPersona1">
+    <Component class="javax.swing.JButton" name="regresar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/images/Regresar.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="regresarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
