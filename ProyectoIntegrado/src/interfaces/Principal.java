@@ -40,10 +40,10 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GUI");
-        setBackground(new java.awt.Color(0, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
         setIconImage(getIconImage());
 
-        jPanel1.setEnabled(false);
+        jPanel1.setBackground(new java.awt.Color(56, 173, 198));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,11 +102,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void menuDepartamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDepartamentosActionPerformed
         Departamento dep=new Departamento();
+        this.add(dep);
         dep.setVisible(true);
     }//GEN-LAST:event_menuDepartamentosActionPerformed
 
     private void menuPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPersonasActionPerformed
         Persona per=new Persona();
+        this.add(per);
         per.setVisible(true);
     }//GEN-LAST:event_menuPersonasActionPerformed
 
