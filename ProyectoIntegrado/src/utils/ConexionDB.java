@@ -51,7 +51,6 @@ public class ConexionDB {
             stm = ConexionDB.getInstance().con.createStatement();
             stm.execute(sql);
             registrar = true;
-            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -74,14 +73,6 @@ public class ConexionDB {
             rs = stm.executeQuery(sql);
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                stm.closeOnCompletion();
-                rs.close();
-                System.err.println("cerrado");
-            } catch (SQLException ex) {
-                Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
         return rs;
     }

@@ -20,7 +20,7 @@ public class PersonaDAO implements IDAOGeneral<Persona> {
         ConexionDB con = ConexionDB.getInstance();
         String sql = "insert into persona(nombre,direccion,telefono,departamento) values ('"
                 + pojo.getNombre() + "','" + pojo.getDireccion() + "','"
-                + pojo.getTelefono() + "','" + "')'";
+                + pojo.getTelefono()+"','"+pojo.getDepartamento().getClave()+ "')";
         res = con.execute(sql);
         return res;
     }
@@ -32,7 +32,8 @@ public class PersonaDAO implements IDAOGeneral<Persona> {
         String sql="update persona set nombre= '"+pojo.getNombre()+
                 "',telefono= '"+pojo.getTelefono()+
                 "' ,direccion = ' "+pojo.getDireccion()+
-                "' ,departamento = '"+pojo.getDepartamento()+" ' ";
+                "' ,departamento = '"+pojo.getDepartamento()+"'"+
+                "where clave = '"+pojo.getClave()+"'";
         res=con.execute(sql);
         return res;
     }
