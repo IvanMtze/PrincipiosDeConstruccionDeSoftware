@@ -27,7 +27,7 @@ public class ConexionDB {
             // TODO code application logic here
             String url = "jdbc:postgresql://localhost:5432/proyectointegrado";
             Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection(url, "postgres", "2408");
+            con = DriverManager.getConnection(url, "postgres", "2107");
             Logger.getLogger(ConexionDB.class.getName()).log(Level.INFO, "Conexion exitosa");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
@@ -74,15 +74,7 @@ public class ConexionDB {
             rs = stm.executeQuery(sql);
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                stm.closeOnCompletion();
-                rs.close();
-                System.err.println("cerrado");
-            } catch (SQLException ex) {
-                Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        } 
         return rs;
     }
 
