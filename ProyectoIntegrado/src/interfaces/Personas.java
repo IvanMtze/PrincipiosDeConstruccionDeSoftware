@@ -231,7 +231,7 @@ public class Personas extends javax.swing.JPanel {
 
     private void buscarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarPersonaActionPerformed
         formato();
-        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
+        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.PERSONA);
         Persona p=new Persona();
         p.setClave(clavePersona.getText());
         ResultSet r = daop.buscar(p);
@@ -254,7 +254,7 @@ public class Personas extends javax.swing.JPanel {
 
     private void editarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPersonaActionPerformed
         formato();
-        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
+        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.PERSONA);
         Persona p=new Persona();
 
         p.setClave(clavePersona.getText());
@@ -264,7 +264,7 @@ public class Personas extends javax.swing.JPanel {
         p.setDepartamento(departamentoPersona.getText());
         formato();
         if (daop.editar(p)) {
-            consolaPersona.setText("Guardado");
+            consolaPersona.setText("Datos cambiados");
         } else {
             consolaPersona.setText("NO se pudo guardar");
         }
@@ -272,7 +272,7 @@ public class Personas extends javax.swing.JPanel {
 
     private void borrarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarPersonaActionPerformed
         formato();
-        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
+        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.PERSONA);
         Persona p=new Persona();
         
         p.setClave(clavePersona.getText());
@@ -282,7 +282,7 @@ public class Personas extends javax.swing.JPanel {
         p.setDepartamento(departamentoPersona.getText());
         formato();
         if (daop.eliminar(p)) {
-            consolaPersona.setText("eliminado");
+            consolaPersona.setText("Eliminado");
         } else {
             consolaPersona.setText("NO se pudo eliminar");
         }

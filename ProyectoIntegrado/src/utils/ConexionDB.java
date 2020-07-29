@@ -74,7 +74,15 @@ public class ConexionDB {
             rs = stm.executeQuery(sql);
         } catch (SQLException e) {
             e.printStackTrace();
-        } 
+        } finally {
+            try {
+                stm.closeOnCompletion();
+                rs.close();
+                System.err.println("cerrado");
+            } catch (SQLException ex) {
+                Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         return rs;
     }
 

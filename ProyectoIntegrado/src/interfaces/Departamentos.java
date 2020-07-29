@@ -207,7 +207,7 @@ public class Departamentos extends javax.swing.JPanel {
         d.setNombre(nombreDepartamento.getText());
         formato();
         if (daop.editar(d)) {
-            consolaDepartamento.setText("Guardado");
+            consolaDepartamento.setText("Datos cambiados");
         } else {
             consolaDepartamento.setText("NO se pudo guardar");
         }    }//GEN-LAST:event_editarDepartamentoActionPerformed
