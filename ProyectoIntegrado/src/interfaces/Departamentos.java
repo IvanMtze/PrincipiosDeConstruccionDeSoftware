@@ -165,7 +165,6 @@ public class Departamentos extends javax.swing.JPanel {
     }//GEN-LAST:event_regresarActionPerformed
 
     private void guardarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDepartamentoActionPerformed
-        consolaDepartamento.setText("");
         IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
         Departamento d = new Departamento();
 
@@ -184,6 +183,7 @@ public class Departamentos extends javax.swing.JPanel {
         Departamento d = new Departamento();
         d.setClave(claveDepartamento.getText());
         ResultSet r = daop.buscar(d);
+        formato();
         if (r != null) {
             try {
                 r.next();
@@ -207,7 +207,7 @@ public class Departamentos extends javax.swing.JPanel {
         d.setNombre(nombreDepartamento.getText());
         formato();
         if (daop.editar(d)) {
-            consolaDepartamento.setText("Guardado");
+            consolaDepartamento.setText("Datos cambiados");
         } else {
             consolaDepartamento.setText("NO se pudo guardar");
         }    }//GEN-LAST:event_editarDepartamentoActionPerformed
@@ -229,6 +229,7 @@ public class Departamentos extends javax.swing.JPanel {
 
     private void formato() {
         consolaDepartamento.setText("");
+
         claveDepartamento.setForeground(Color.DARK_GRAY);
         claveDepartamento.setText("Clave:");
 
