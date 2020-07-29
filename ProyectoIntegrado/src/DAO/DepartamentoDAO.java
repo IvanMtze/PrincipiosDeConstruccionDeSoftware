@@ -5,6 +5,8 @@
  */
 package DAO;
 
+import java.sql.ResultSet;
+import javax.naming.spi.DirStateFactory;
 import utils.ConexionDB;
 
 /**
@@ -17,8 +19,7 @@ public class DepartamentoDAO implements IDAOGeneral<Departamento>{
     public boolean guardar(Departamento pojo) {
         boolean res;
        ConexionDB con=ConexionDB.getInstance();
-       String sql="insert into departamento(clave,nombre) values (" +
-               pojo.getClave() + "," + pojo.getClave() + ")";
+       String sql="insert into departamento(nombre) values ('" + pojo.getNombre()+ "')";
        res=con.execute(sql);
        return res;
     }
@@ -34,11 +35,11 @@ public class DepartamentoDAO implements IDAOGeneral<Departamento>{
     }
 
     @Override
-    public boolean buscar(Departamento pojo) {
-        boolean res;
+    public ResultSet buscar(Departamento pojo) {
+        ResultSet res;
         ConexionDB con=ConexionDB.getInstance();
         String sql="select * from departamento where clave = '"+pojo.getClave()+"'";
-        res=con.execute(sql);
+        res=con.select(sql);
         return res;
     }
 

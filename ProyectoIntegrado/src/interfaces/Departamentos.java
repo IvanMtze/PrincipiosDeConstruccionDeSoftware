@@ -9,6 +9,10 @@ import DAO.FactoryDAO;
 import DAO.IDAOGeneral;
 import DAO.Departamento;
 import java.awt.Color;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -162,14 +166,12 @@ public class Departamentos extends javax.swing.JPanel {
 
     private void guardarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDepartamentoActionPerformed
         consolaDepartamento.setText("");
-        formato();
-        
         IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
         Departamento d = new Departamento();
 
         d.setClave(claveDepartamento.getText());
         d.setNombre(nombreDepartamento.getText());
-
+        formato();
         if (daop.guardar(d)) {
             consolaDepartamento.setText("Guardado");
         } else {
@@ -178,22 +180,58 @@ public class Departamentos extends javax.swing.JPanel {
     }//GEN-LAST:event_guardarDepartamentoActionPerformed
 
     private void buscarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarDepartamentoActionPerformed
-        formato();
+        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
+        Departamento d = new Departamento();
+        d.setClave(claveDepartamento.getText());
+        ResultSet r = daop.buscar(d);
+        if (r != null) {
+            try {
+                r.next();
+                claveDepartamento.setText(r.getString(1));
+                nombreDepartamento.setText(r.getString(2));
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Departamentos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+        }
+
     }//GEN-LAST:event_buscarDepartamentoActionPerformed
 
     private void editarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarDepartamentoActionPerformed
+        consolaDepartamento.setText("");
+        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
+        Departamento d = new Departamento();
+
+        d.setClave(claveDepartamento.getText());
+        d.setNombre(nombreDepartamento.getText());
         formato();
-    }//GEN-LAST:event_editarDepartamentoActionPerformed
+        if (daop.editar(d)) {
+            consolaDepartamento.setText("Guardado");
+        } else {
+            consolaDepartamento.setText("NO se pudo guardar");
+        }    }//GEN-LAST:event_editarDepartamentoActionPerformed
 
     private void eliminarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarDepartamentoActionPerformed
+        consolaDepartamento.setText("");
+        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
+        Departamento d = new Departamento();
+
+        d.setClave(claveDepartamento.getText());
+        d.setNombre(nombreDepartamento.getText());
         formato();
+        if (daop.eliminar(d)) {
+            consolaDepartamento.setText("eliminado");
+        } else {
+            consolaDepartamento.setText("NO se pudo eliminar");
+        }
     }//GEN-LAST:event_eliminarDepartamentoActionPerformed
 
     private void formato() {
         consolaDepartamento.setText("");
         claveDepartamento.setForeground(Color.DARK_GRAY);
         claveDepartamento.setText("Clave:");
- 
+
         nombreDepartamento.setForeground(Color.DARK_GRAY);
         nombreDepartamento.setText("Nombre:");
     }

@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import java.sql.ResultSet;
 import utils.ConexionDB;
 
 /**
@@ -17,9 +18,9 @@ public class PersonaDAO implements IDAOGeneral<Persona> {
     public boolean guardar(Persona pojo) {
         boolean res;
         ConexionDB con = ConexionDB.getInstance();
-        String sql = "insert into persona(clave,nombre,direccion,telefono,departamento) values ("
-                + pojo.getClave() + "," + pojo.getNombre() + "," + pojo.getDireccion() + ","
-                + pojo.getTelefono() + "," + ")";
+        String sql = "insert into persona(nombre,direccion,telefono,departamento) values ('"
+                + pojo.getNombre() + "','" + pojo.getDireccion() + "','"
+                + pojo.getTelefono() + "','" + "')'";
         res = con.execute(sql);
         return res;
     }
@@ -37,11 +38,11 @@ public class PersonaDAO implements IDAOGeneral<Persona> {
     }
 
     @Override
-    public boolean buscar(Persona pojo) {
-        boolean res;
+    public ResultSet buscar(Persona pojo) {
+        ResultSet res;
         ConexionDB con=ConexionDB.getInstance();
         String sql="select * from persona where clave = '"+pojo.getClave()+"'";
-        res=con.execute(sql);
+        res=con.select(sql);
         return res;
     }
 
