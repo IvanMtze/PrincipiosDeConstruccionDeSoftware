@@ -5,10 +5,7 @@
  */
 package interfaces;
 
-<<<<<<< HEAD
 import DAO.Departamento;
-=======
->>>>>>> c4c17e87a58b04e7c090fd0c6c8e998e52e65ac3
 import DAO.FactoryDAO;
 import DAO.IDAOGeneral;
 import DAO.Persona;
@@ -217,7 +214,6 @@ public class Personas extends javax.swing.JPanel {
     }//GEN-LAST:event_regresarActionPerformed
 
     private void guardarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarPersonaActionPerformed
-<<<<<<< HEAD
         consolaPersona.setText("");
         IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.PERSONA);
         Persona d = new Persona();
@@ -251,26 +247,12 @@ public class Personas extends javax.swing.JPanel {
         formato();
         if (daop.guardar(d)) {
             consolaPersona.setText("guardado");
-=======
-        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.PERSONA);
-        Persona p=new Persona();
-
-        p.setClave(clavePersona.getText());
-        p.setNombre(nombrePersona.getText());
-        p.setTelefono(telefonoPersona.getText());
-        p.setDireccion(direccionPersona.getText());
-        p.setDepartamento(departamentoPersona.getText());
-        formato();
-        if (daop.guardar(p)) {
-            consolaPersona.setText("Guardado");
->>>>>>> c4c17e87a58b04e7c090fd0c6c8e998e52e65ac3
         } else {
             consolaPersona.setText("NO se pudo guardar");
         }
     }//GEN-LAST:event_guardarPersonaActionPerformed
 
     private void buscarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarPersonaActionPerformed
-<<<<<<< HEAD
         consolaPersona.setText("");
         IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.PERSONA);
         Persona d = new Persona();
@@ -297,29 +279,6 @@ public class Personas extends javax.swing.JPanel {
         } else {
             consolaPersona.setText("NO se pudo encontrar");
         }    }//GEN-LAST:event_buscarPersonaActionPerformed
-=======
-        formato();
-        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.PERSONA);
-        Persona p=new Persona();
-        p.setClave(clavePersona.getText());
-        ResultSet r = daop.buscar(p);
-        formato();
-        if (r != null) {
-            try {
-                r.next();
-                clavePersona.setText(r.getString(1));
-                nombrePersona.setText(r.getString(2));
-                telefonoPersona.setText(r.getString(3));
-                direccionPersona.setText(r.getString(4));
-                departamentoPersona.setText(r.getString(5));
-
-            } catch (SQLException ex) {
-                Logger.getLogger(Departamentos.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-        }
-    }//GEN-LAST:event_buscarPersonaActionPerformed
->>>>>>> c4c17e87a58b04e7c090fd0c6c8e998e52e65ac3
 
     private void editarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPersonaActionPerformed
         consolaPersona.setText("");
@@ -352,29 +311,11 @@ public class Personas extends javax.swing.JPanel {
         }
         d.setDepartamento(depto);
         formato();
-<<<<<<< HEAD
         if (daop.editar(d)) {
             consolaPersona.setText("guardado");
         } else {
             consolaPersona.setText("NO se pudo guardar");
         }    }//GEN-LAST:event_editarPersonaActionPerformed
-=======
-        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.PERSONA);
-        Persona p=new Persona();
-
-        p.setClave(clavePersona.getText());
-        p.setNombre(nombrePersona.getText());
-        p.setTelefono(telefonoPersona.getText());
-        p.setDireccion(direccionPersona.getText());
-        p.setDepartamento(departamentoPersona.getText());
-        formato();
-        if (daop.editar(p)) {
-            consolaPersona.setText("Datos cambiados");
-        } else {
-            consolaPersona.setText("NO se pudo guardar");
-        }
-    }//GEN-LAST:event_editarPersonaActionPerformed
->>>>>>> c4c17e87a58b04e7c090fd0c6c8e998e52e65ac3
 
     private void borrarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarPersonaActionPerformed
         consolaPersona.setText("");
@@ -382,29 +323,11 @@ public class Personas extends javax.swing.JPanel {
         Persona d = new Persona();
         d.setClave(clavePersona.getText());
         formato();
-<<<<<<< HEAD
         if (daop.eliminar(d)) {
             consolaPersona.setText("eliminar");
         } else {
             consolaPersona.setText("NO se pudo eliminar");
         }    }//GEN-LAST:event_borrarPersonaActionPerformed
-=======
-        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.PERSONA);
-        Persona p=new Persona();
-        
-        p.setClave(clavePersona.getText());
-        p.setNombre(nombrePersona.getText());
-        p.setTelefono(telefonoPersona.getText());
-        p.setDireccion(direccionPersona.getText());
-        p.setDepartamento(departamentoPersona.getText());
-        formato();
-        if (daop.eliminar(p)) {
-            consolaPersona.setText("Eliminado");
-        } else {
-            consolaPersona.setText("NO se pudo eliminar");
-        }
-    }//GEN-LAST:event_borrarPersonaActionPerformed
->>>>>>> c4c17e87a58b04e7c090fd0c6c8e998e52e65ac3
 
     private void formato() {
         consolaPersona.setText("");
