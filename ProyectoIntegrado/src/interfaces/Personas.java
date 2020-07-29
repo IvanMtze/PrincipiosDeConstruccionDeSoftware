@@ -11,12 +11,12 @@ import java.awt.Color;
  *
  * @author oswaldo
  */
-public class Persona extends javax.swing.JPanel {
+public class Personas extends javax.swing.JPanel {
 
     /**
      * Creates new form Persona
      */
-    public Persona() {
+    public Personas() {
         initComponents();
     }
 
@@ -41,6 +41,7 @@ public class Persona extends javax.swing.JPanel {
         borrarPersona = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         regresar = new javax.swing.JButton();
+        departamentoPersona = new javax.swing.JTextField();
 
         jScrollPane1.setViewportView(consolaPersona);
 
@@ -99,6 +100,14 @@ public class Persona extends javax.swing.JPanel {
             }
         });
 
+        departamentoPersona.setForeground(new java.awt.Color(153, 153, 153));
+        departamentoPersona.setText("Departamento:");
+        departamentoPersona.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                departamentoPersonaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -123,20 +132,21 @@ public class Persona extends javax.swing.JPanel {
                     .addComponent(direccionPersona)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(departamentoPersona))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(buscarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(editarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(borrarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(regresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(guardarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(guardarPersona))
                 .addGap(18, 18, 18)
                 .addComponent(clavePersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -146,6 +156,8 @@ public class Persona extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(direccionPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(departamentoPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -171,11 +183,18 @@ public class Persona extends javax.swing.JPanel {
         direccionPersona.setBackground(Color.BLACK);
     }//GEN-LAST:event_direccionPersonaMouseClicked
 
+    private void departamentoPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_departamentoPersonaMouseClicked
+        departamentoPersona.setText("");
+        departamentoPersona.setBackground(Color.BLACK);
+    }//GEN-LAST:event_departamentoPersonaMouseClicked
+
     private void regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarActionPerformed
         System.exit(0);
     }//GEN-LAST:event_regresarActionPerformed
 
     private void guardarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarPersonaActionPerformed
+        consolaPersona.setText("");
+        
         clavePersona.setBackground(Color.DARK_GRAY);
         clavePersona.setText("Clave:");
 
@@ -187,6 +206,9 @@ public class Persona extends javax.swing.JPanel {
 
         direccionPersona.setBackground(Color.DARK_GRAY);
         direccionPersona.setText("Direccion:");
+
+        departamentoPersona.setBackground(Color.DARK_GRAY);
+        departamentoPersona.setText("Departamento: ");
     }//GEN-LAST:event_guardarPersonaActionPerformed
 
 
@@ -195,6 +217,7 @@ public class Persona extends javax.swing.JPanel {
     private javax.swing.JButton buscarPersona;
     private javax.swing.JTextField clavePersona;
     private javax.swing.JTextPane consolaPersona;
+    private javax.swing.JTextField departamentoPersona;
     private javax.swing.JTextField direccionPersona;
     private javax.swing.JButton editarPersona;
     private javax.swing.JButton guardarPersona;

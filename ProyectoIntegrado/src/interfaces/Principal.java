@@ -6,6 +6,7 @@
 package interfaces;
 
 import javax.swing.ImageIcon;
+import utils.ConexionDB;
 
 /**
  *
@@ -18,6 +19,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        ConexionDB con=ConexionDB.getInstance();
         this.setLocationRelativeTo(null);
         setIconImage(new ImageIcon(getClass().getResource("/images/IconoPrincipal.png")).getImage());
     }
@@ -101,15 +103,14 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuDepartamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDepartamentosActionPerformed
-        Departamento dep=new Departamento();
-        this.add(dep);
-        dep.setVisible(true);
+        Departamentos dep=new Departamentos();
+        this.getContentPane().add(dep);
+        
     }//GEN-LAST:event_menuDepartamentosActionPerformed
 
     private void menuPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPersonasActionPerformed
-        Persona per=new Persona();
-        this.add(per);
-        per.setVisible(true);
+        Personas per=new Personas();
+        this.getContentPane().add(per);
     }//GEN-LAST:event_menuPersonasActionPerformed
 
     private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked

@@ -5,18 +5,21 @@
  */
 package interfaces;
 
+import DAO.FactoryDAO;
+import DAO.IDAOGeneral;
+import DAO.Departamento;
 import java.awt.Color;
 
 /**
  *
  * @author oswaldo
  */
-public class Departamento extends javax.swing.JPanel {
+public class Departamentos extends javax.swing.JPanel {
 
     /**
      * Creates new form Departamento
      */
-    public Departamento() {
+    public Departamentos() {
         initComponents();
         
     }
@@ -143,11 +146,24 @@ public class Departamento extends javax.swing.JPanel {
     }//GEN-LAST:event_regresarActionPerformed
 
     private void guardarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDepartamentoActionPerformed
+        consolaDepartamento.setText("");
+        
         claveDepartamento.setBackground(Color.DARK_GRAY);
         claveDepartamento.setText("Clave:");
         
         nombreDepartamento.setBackground(Color.DARK_GRAY);
         nombreDepartamento.setText("Nombre:");
+        
+        IDAOGeneral daop = FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
+        Departamento d=new Departamento();
+
+        d.setClave(claveDepartamento.getText());
+        d.setNombre(nombreDepartamento.getText());
+        
+        if(daop.guardar(d))
+            consolaDepartamento.setText("Guardado");
+        else
+            consolaDepartamento.setText("NO se pudo guardar");
     }//GEN-LAST:event_guardarDepartamentoActionPerformed
 
 
