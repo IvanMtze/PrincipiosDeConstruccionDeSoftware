@@ -1,20 +1,20 @@
 
-W
-java:S2259<"AA "NullPointerException" could be thrown; "stm" is nullable here.(ÜÖ¸ˆ
 H
 java:S1135"2Complete the task associated to this TODO comment.(ÌûŽû
-]
-java:S2095I"GUse try-with-resources or close this "Statement" in a "finally" clause.(¥«à†
->
-java:S1148L"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-H
-java:S4925"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
 V
 java:S2259Q"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù
+H
+java:S4925"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
 >
-java:S11489"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+java:S1148L"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
 \
 java:S2259P"AA "NullPointerException" could be thrown; "stm" is nullable here.(£¨Œ±ûÿÿÿÿ
+]
+java:S2095I"GUse try-with-resources or close this "Statement" in a "finally" clause.(¥«à†
+W
+java:S2259<"AA "NullPointerException" could be thrown; "stm" is nullable here.(ÜÖ¸ˆ
+N	java:S106R"9Replace this use of System.out or System.err by a logger.(†þ¢²
 Z
 java:S2147""DCombine this catch with the one at line 32, which has the same body.(À‹ø„
-N	java:S106R"9Replace this use of System.out or System.err by a logger.(†þ¢²
+>
+java:S11489"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
