@@ -34,10 +34,9 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        menuSalir = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
         menuPersonas = new javax.swing.JMenuItem();
         menuDepartamentos = new javax.swing.JMenuItem();
+        salir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GUI");
@@ -57,19 +56,7 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 279, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Archivo");
-
-        menuSalir.setText("Salir");
-        menuSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuSalirActionPerformed(evt);
-            }
-        });
-        jMenu1.add(menuSalir);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Operaciones");
+        jMenu1.setText("Menu");
 
         menuPersonas.setText("Personas");
         menuPersonas.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +64,7 @@ public class Principal extends javax.swing.JFrame {
                 menuPersonasActionPerformed(evt);
             }
         });
-        jMenu2.add(menuPersonas);
+        jMenu1.add(menuPersonas);
 
         menuDepartamentos.setText("Departamentos");
         menuDepartamentos.addActionListener(new java.awt.event.ActionListener() {
@@ -85,9 +72,17 @@ public class Principal extends javax.swing.JFrame {
                 menuDepartamentosActionPerformed(evt);
             }
         });
-        jMenu2.add(menuDepartamentos);
+        jMenu1.add(menuDepartamentos);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenu1);
+
+        salir.setText("Salir");
+        salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(salir);
 
         setJMenuBar(jMenuBar1);
 
@@ -105,10 +100,6 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_menuSalirActionPerformed
-
     private void menuDepartamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDepartamentosActionPerformed
         Departamento dep=new Departamento();
         dep.setVisible(true);
@@ -118,6 +109,10 @@ public class Principal extends javax.swing.JFrame {
         Persona per=new Persona();
         per.setVisible(true);
     }//GEN-LAST:event_menuPersonasActionPerformed
+
+    private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_salirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -156,11 +151,10 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem menuDepartamentos;
     private javax.swing.JMenuItem menuPersonas;
-    private javax.swing.JMenuItem menuSalir;
+    private javax.swing.JMenu salir;
     // End of variables declaration//GEN-END:variables
 }
